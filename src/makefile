@@ -5,15 +5,6 @@ all:
 	g++ -std=c++11 -shared index.cpp -o .index.so -fPIC $(CFLAGS) -O2
 	g++ -std=c++11 -shared encoder.cpp -o .encoder.so -fPIC $(CFLAGS) $(PYPATH) -O2
 
-preprocess:
-	rm -rf ../data
-	python preprocess.py ~/Dataset/table/a &
-	python preprocess.py ~/Dataset/table/b &
-	python preprocess.py ~/Dataset/table/c &
-	python preprocess.py ~/Dataset/table/d &
-	python preprocess.py ~/Dataset/table/e &
-	python preprocess.py ~/Dataset/table/t &
-
 freeze:
 	rm -rf ../data/?/freeze/
 	python engine.py --dataset_name a,b,c,d,e,t,x --is_brief

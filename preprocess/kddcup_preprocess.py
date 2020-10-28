@@ -8,8 +8,8 @@ import pandas as pd
 
 for v in 'ABCDE':
   random_state = np.random.RandomState(1021)
-  raw_dir = os.path.join(v, 'train')
-  new_dir = os.path.join('../table', v.lower())
+  raw_dir = os.path.join('../raw/kddcup', v, 'train')
+  new_dir = os.path.join('../data', v.lower())
   if os.path.exists(new_dir):
     shutil.rmtree(new_dir)
   os.makedirs(new_dir)

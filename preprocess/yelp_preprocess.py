@@ -9,8 +9,8 @@ from collections import defaultdict
 def getFileLines(filePath):
   return int(subprocess.getoutput('wc -l ' + filePath).split()[0])
 
-fileDir = 'raw'
-output_dir = os.path.join(os.environ['HOME'], 'Dataset/table/y')
+fileDir = '../raw/yelp'
+output_dir = '../data/y'
 os.makedirs(output_dir, exist_ok=True)
 
 
